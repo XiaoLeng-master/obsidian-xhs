@@ -8,3 +8,4 @@
 
 # 飞书同步脚本的依赖（可随时 npm install 恢复）
 飞书同步脚本/node_modules/
+.claudian/
