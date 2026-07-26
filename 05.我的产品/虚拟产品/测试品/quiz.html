@@ -17,11 +17,10 @@
     --primary-dark: #c9654b;
     --stay: #3d5a80;
     --go: #ee6c4d;
-    --gold: #e8b44f;
     --progress-bg: #e8ddd0;
-    --divider: #f0ebe3;
-    --shadow: 0 2px 16px rgba(0,0,0,0.06);
-    --radius: 16px;
+    --divider: #ede6dc;
+    --shadow: 0 2px 20px rgba(0,0,0,0.05);
+    --radius: 18px;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -32,72 +31,81 @@
     justify-content: center;
     -webkit-font-smoothing: antialiased;
   }
-  .app { width: 100%; max-width: 480px; min-height: 100dvh; position: relative; overflow: hidden; }
+  .app { width: 100%; max-width: 640px; min-height: 100dvh; position: relative; overflow-x: hidden; }
 
   /* Progress */
-  .progress-wrap { padding: 20px 24px 0; }
-  .progress-bar { height: 4px; background: var(--progress-bg); border-radius: 2px; overflow: hidden; }
-  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--stay), var(--primary), var(--go)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
-  .progress-text { text-align: right; font-size: 12px; color: var(--sub); margin-top: 6px; }
+  .progress-wrap { padding: 28px 32px 0; }
+  .progress-bar { height: 5px; background: var(--progress-bg); border-radius: 3px; overflow: hidden; }
+  .progress-fill { height: 100%; background: linear-gradient(90deg, var(--stay), var(--primary), var(--go)); border-radius: 3px; transition: width 0.4s ease; width: 0%; }
+  .progress-text { text-align: right; font-size: 14px; color: var(--sub); margin-top: 8px; }
 
   /* Pages */
-  .page { display: none; flex-direction: column; padding: 0 24px 40px; animation: fadeSlideIn 0.35s ease; }
+  .page { display: none; flex-direction: column; padding: 0 32px 40px; animation: fadeSlideIn 0.3s ease; }
   .page.active { display: flex; }
-  @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
   /* Landing */
-  .landing { text-align: center; padding-top: 60px; align-items: center; }
-  .landing-icon { font-size: 56px; margin-bottom: 16px; }
-  .landing h1 { font-size: 26px; font-weight: 700; line-height: 1.4; margin-bottom: 10px; color: var(--text); }
-  .landing .sub { font-size: 15px; color: var(--sub); line-height: 1.6; margin-bottom: 8px; }
-  .landing .hint { font-size: 13px; color: #b0a89a; margin-bottom: 32px; }
-  .landing .stats { display: flex; gap: 24px; justify-content: center; margin-bottom: 36px; }
-  .landing .stat-num { font-size: 28px; font-weight: 700; color: var(--primary); }
-  .landing .stat-label { font-size: 12px; color: var(--sub); margin-top: 2px; }
+  .landing { text-align: center; padding-top: 80px; align-items: center; }
+  .landing-icon { font-size: 64px; margin-bottom: 20px; }
+  .landing h1 { font-size: 30px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: var(--text); }
+  .landing .sub { font-size: 17px; color: var(--sub); line-height: 1.7; margin-bottom: 8px; }
+  .landing .hint { font-size: 14px; color: #b0a89a; margin-bottom: 36px; }
+  .landing .stats { display: flex; gap: 32px; justify-content: center; margin-bottom: 40px; }
+  .landing .stat-num { font-size: 32px; font-weight: 700; color: var(--primary); }
+  .landing .stat-label { font-size: 13px; color: var(--sub); margin-top: 4px; }
 
   /* Buttons */
   .btn {
-    display: inline-block; padding: 14px 40px; border-radius: 50px; font-size: 17px; font-weight: 600;
-    border: none; cursor: pointer; transition: all 0.2s; text-align: center; letter-spacing: 0.5px;
-    -webkit-tap-highlight-color: transparent;
+    display: inline-block; padding: 16px 44px; border-radius: 50px; font-size: 18px; font-weight: 600;
+    border: none; cursor: pointer; transition: all 0.15s; text-align: center; letter-spacing: 0.5px;
+    -webkit-tap-highlight-color: transparent; user-select: none;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(224,122,95,0.35); }
+  .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 16px rgba(224,122,95,0.3); }
   .btn-primary:hover { background: var(--primary-dark); }
+  .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
+  .btn-primary:disabled:active { transform: none; }
 
   /* Question Card */
-  .q-card { background: var(--card); border-radius: var(--radius); padding: 28px 24px 24px; box-shadow: var(--shadow); }
-  .q-num { font-size: 12px; color: var(--sub); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-  .q-text { font-size: 18px; font-weight: 600; line-height: 1.5; margin-bottom: 24px; color: var(--text); }
-  .q-options { display: flex; flex-direction: column; gap: 10px; }
+  .q-card { background: var(--card); border-radius: var(--radius); padding: 36px 28px 28px; box-shadow: var(--shadow); }
+  .q-num { font-size: 13px; color: var(--sub); letter-spacing: 1px; margin-bottom: 14px; }
+  .q-text { font-size: 20px; font-weight: 600; line-height: 1.6; margin-bottom: 28px; color: var(--text); }
+  .q-options { display: flex; flex-direction: column; gap: 12px; }
   .q-opt {
-    display: block; width: 100%; padding: 14px 18px; border: 1.5px solid var(--divider); border-radius: 12px;
-    background: var(--card); font-size: 15px; color: var(--text); text-align: left; cursor: pointer;
-    transition: all 0.2s; -webkit-tap-highlight-color: transparent; line-height: 1.5;
+    display: block; width: 100%; padding: 16px 20px; border: 2px solid var(--divider); border-radius: 14px;
+    background: var(--card); font-size: 17px; color: var(--text); text-align: left; cursor: pointer;
+    transition: border-color 0.15s, background 0.15s; -webkit-tap-highlight-color: transparent; line-height: 1.5;
   }
-  .q-opt:hover, .q-opt:active { border-color: var(--primary); background: #fef8f5; }
+  .q-opt:active { border-color: var(--primary); background: #fef8f5; }
   .q-opt.selected { border-color: var(--primary); background: #fef3ee; font-weight: 500; }
 
   /* Results */
-  .result { text-align: center; padding-top: 30px; align-items: center; }
-  .result-type { display: inline-block; padding: 6px 20px; border-radius: 50px; font-size: 13px; font-weight: 600; letter-spacing: 1px; margin-bottom: 16px; }
+  .result { text-align: center; padding-top: 40px; align-items: center; }
+  .result-type { display: inline-block; padding: 8px 24px; border-radius: 50px; font-size: 15px; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px; }
   .result-type.stay { background: #e8f0fa; color: var(--stay); }
   .result-type.go { background: #fef0ec; color: var(--go); }
   .result-type.swing { background: #fef8e5; color: #b8860b; }
-  .result h2 { font-size: 24px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; }
-  .result .score-bar-wrap { width: 100%; max-width: 300px; margin: 16px auto 24px; }
-  .result .score-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--sub); margin-bottom: 4px; }
-  .result .score-bar-bg { height: 8px; background: var(--progress-bg); border-radius: 4px; overflow: hidden; display: flex; }
+  .result h2 { font-size: 26px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
+  .result .score-bar-wrap { width: 100%; max-width: 360px; margin: 16px auto 28px; }
+  .result .score-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--sub); margin-bottom: 6px; }
+  .result .score-bar-bg { height: 10px; background: var(--progress-bg); border-radius: 5px; overflow: hidden; display: flex; }
   .result .score-bar-go { background: var(--go); height: 100%; transition: width 0.6s ease; }
   .result .score-bar-stay { background: var(--stay); height: 100%; transition: width 0.6s ease; }
-  .result .score-marker { position: relative; height: 20px; margin-top: 2px; }
-  .result .score-marker-dot { position: absolute; width: 10px; height: 10px; background: var(--text); border-radius: 50%; transform: translateX(-50%); top: 5px; transition: left 0.6s ease; }
-  .result .insight { background: var(--card); border-radius: var(--radius); padding: 20px 24px; text-align: left; line-height: 1.7; font-size: 15px; color: var(--text); box-shadow: var(--shadow); margin-bottom: 12px; }
-  .result .insight-title { font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase; }
-  .result .share-hint { font-size: 13px; color: var(--sub); margin: 20px 0 24px; }
+  .result .insight { background: var(--card); border-radius: var(--radius); padding: 24px 28px; text-align: left; line-height: 1.8; font-size: 16px; color: var(--text); box-shadow: var(--shadow); margin-bottom: 14px; }
+  .result .insight-title { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 8px; letter-spacing: 1px; }
+  .result .share-hint { font-size: 14px; color: var(--sub); margin: 24px 0 28px; }
 
   /* Bottom safe area */
-  .bottom-safe { height: env(safe-area-inset-bottom, 20px); }
+  .bottom-safe { height: env(safe-area-inset-bottom, 32px); }
+
+  /* Desktop: center the app with a subtle card feel */
+  @media (min-width: 768px) {
+    body { background: #ede6dc; padding: 40px 0; align-items: flex-start; }
+    .app {
+      max-width: 600px; min-height: auto; background: var(--bg); border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08); margin: 0 16px;
+    }
+  }
 </style>
 </head>
 <body>
@@ -189,91 +197,97 @@ const QUESTIONS = [
 ];
 
 // ── State ──
-let currentQ = 0, answers = [], totalScore = 0;
+let currentQ = 0, answers = [];
 
 // ── Render ──
 const app = document.getElementById('app');
 
 function renderLanding() {
-  app.innerHTML = `
-    <div class="page active landing">
-      <div class="landing-icon">🏙️</div>
-      <h1>去还是留？<br>城市选择测试</h1>
-      <p class="sub">35道题，帮你面对那个压了很久的问题：</p>
-      <p class="sub" style="font-weight:600;color:var(--text)">"我到底该留在大城市，还是回老家？"</p>
-      <p class="hint">· 不是性格测试 · 不是娱乐闯关 · 是帮你想清楚 ·</p>
-      <div class="stats">
-        <div><div class="stat-num">35</div><div class="stat-label">道深度问题</div></div>
-        <div><div class="stat-num">5</div><div class="stat-label">个维度分析</div></div>
-        <div><div class="stat-num">3min</div><div class="stat-label">完成测试</div></div>
-      </div>
-      <button class="btn btn-primary" onclick="startQuiz()">开始测试</button>
-      <p style="font-size:12px;color:#b0a89a;margin-top:12px;">已经帮几万人想清楚这个问题</p>
-      <div class="bottom-safe"></div>
-    </div>`;
+  app.innerHTML = `<div class="page active landing">
+    <div class="landing-icon">🏙️</div>
+    <h1>去还是留？<br>城市选择测试</h1>
+    <p class="sub">25道题，帮你面对那个压了很久的问题：</p>
+    <p class="sub" style="font-weight:600;color:var(--text)">"我到底该留在大城市，还是回老家？"</p>
+    <p class="hint">· 不是性格测试 · 不是娱乐闯关 · 是帮你想清楚 ·</p>
+    <div class="stats">
+      <div><div class="stat-num">25</div><div class="stat-label">道深度问题</div></div>
+      <div><div class="stat-num">5</div><div class="stat-label">个维度分析</div></div>
+      <div><div class="stat-num">3min</div><div class="stat-label">完成测试</div></div>
+    </div>
+    <button class="btn btn-primary" onclick="startQuiz()">开始测试</button>
+    <div class="bottom-safe"></div>
+  </div>`;
 }
 
 function renderQuestion(idx) {
   const q = QUESTIONS[idx];
   const progress = Math.round((idx / QUESTIONS.length) * 100);
-  const selectedVal = answers[idx] !== undefined ? answers[idx] : -1;
-  app.innerHTML = `
-    <div class="progress-wrap">
-      <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
-      <div class="progress-text">${idx + 1} / ${QUESTIONS.length}</div>
+  const selectedIdx = answers[idx] !== undefined ? answers[idx] : -1;
+
+  app.innerHTML = `<div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" style="width:${progress}%"></div></div>
+    <div class="progress-text">${idx + 1} / ${QUESTIONS.length}</div>
+  </div>
+  <div class="page active">
+    <div class="q-card">
+      <div class="q-num">${q.dim} · 第${idx+1}题</div>
+      <div class="q-text">${q.q}</div>
+      <div class="q-options" id="options-${idx}">
+        ${q.opts.map((o,i) => `<button class="q-opt${i === selectedIdx ? ' selected' : ''}" data-opt="${i}">${o.text}</button>`).join('')}
+      </div>
     </div>
-    <div class="page active">
-      <div class="q-card">
-        <div class="q-num">${q.dim} · 第${idx+1}题</div>
-        <div class="q-text">${q.q}</div>
-        <div class="q-options" id="options-${idx}">
-          ${q.opts.map((o,i) => `
-            <button class="q-opt${i === selectedVal ? ' selected' : ''}" data-idx="${i}" onclick="selectAnswer(${idx}, ${i})">${o.text}</button>
-          `).join('')}
-        </div>
-      </div>
-      <div style="display:flex;justify-content:space-between;margin-top:20px;gap:12px;">
-        ${idx > 0 ? '<button class="btn" style="background:var(--card);border:1.5px solid var(--divider);color:var(--text);flex:1;padding:12px;" onclick="prevQ()">← 上一题</button>' : '<div style="flex:1"></div>'}
-        <button class="btn btn-primary" style="flex:1;padding:12px;" onclick="nextQ()" ${answers[idx]===undefined?'disabled':''} id="nextBtn-${idx}">
-          ${idx < QUESTIONS.length - 1 ? '下一题 →' : '查看结果 ✨'}
-        </button>
-      </div>
-      <div class="bottom-safe"></div>
-    </div>`;
-}
+    <div style="display:flex;justify-content:space-between;margin-top:24px;gap:12px;">
+      ${idx > 0 ? '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);flex:1;padding:14px;font-size:16px;" id="prevBtn">← 上一题</button>' : '<div style="flex:1"></div>'}
+      <button class="btn btn-primary" style="flex:1;padding:14px;font-size:16px;" id="nextBtn" ${selectedIdx===-1?'disabled':''}>${idx < QUESTIONS.length - 1 ? '下一题 →' : '查看结果 ✨'}</button>
+    </div>
+    <div class="bottom-safe"></div>
+  </div>`;
 
-function selectAnswer(qIdx, optIdx) {
-  answers[qIdx] = optIdx;
-  renderQuestion(qIdx);
-}
+  // Attach event listeners directly (no inline onclick → no jump)
+  const optsEl = document.getElementById(`options-${idx}`);
+  if (optsEl) {
+    optsEl.addEventListener('click', function(e) {
+      const btn = e.target.closest('.q-opt');
+      if (!btn) return;
+      const optIdx = parseInt(btn.dataset.opt);
+      // Update visual selection without re-render
+      optsEl.querySelectorAll('.q-opt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      // Update state
+      answers[idx] = optIdx;
+      // Enable next button
+      const nextBtn = document.getElementById('nextBtn');
+      if (nextBtn) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; }
+    });
+  }
 
-function prevQ() {
-  if (currentQ > 0) { currentQ--; renderQuestion(currentQ); window.scrollTo(0,0); }
-}
+  const nextBtn = document.getElementById('nextBtn');
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function() {
+      if (answers[idx] === undefined) return;
+      if (idx < QUESTIONS.length - 1) { currentQ = idx + 1; renderQuestion(currentQ); window.scrollTo(0,0); }
+      else { showResult(); }
+    });
+  }
 
-function nextQ() {
-  if (answers[currentQ] === undefined) return;
-  if (currentQ < QUESTIONS.length - 1) {
-    currentQ++;
-    renderQuestion(currentQ);
-    window.scrollTo(0,0);
-  } else {
-    showResult();
+  const prevBtn = document.getElementById('prevBtn');
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function() {
+      currentQ = idx - 1; renderQuestion(currentQ); window.scrollTo(0,0);
+    });
   }
 }
 
 function startQuiz() {
-  currentQ = 0; answers = []; totalScore = 0;
+  currentQ = 0; answers = new Array(QUESTIONS.length);
   renderQuestion(0);
   window.scrollTo(0,0);
 }
 
 function calcScore() {
-  totalScore = 0;
-  QUESTIONS.forEach((q, i) => {
-    if (answers[i] !== undefined) totalScore += q.opts[answers[i]].v;
-  });
-  return totalScore;
+  let s = 0;
+  QUESTIONS.forEach((q, i) => { if (answers[i] !== undefined) s += q.opts[answers[i]].v; });
+  return s;
 }
 
 function getResult(score) {
@@ -317,32 +331,26 @@ function showResult() {
   const goPercent = Math.round(((score - minPossible) / (maxPossible - minPossible)) * 100);
   const stayPercent = 100 - goPercent;
 
-  app.innerHTML = `
-    <div class="page active result">
-      <div class="result-type ${r.type}">${r.label}${r.emoji}</div>
-      <h2>${r.title}</h2>
-      <div class="score-bar-wrap">
-        <div class="score-labels"><span>← 回老家</span><span>留在大城市 →</span></div>
-        <div class="score-bar-bg">
-          <div class="score-bar-go" style="width:${goPercent}%"></div>
-          <div class="score-bar-stay" style="width:${stayPercent}%"></div>
-        </div>
+  app.innerHTML = `<div class="page active result">
+    <div class="result-type ${r.type}">${r.label} ${r.emoji}</div>
+    <h2>${r.title}</h2>
+    <div class="score-bar-wrap">
+      <div class="score-labels"><span>← 回老家</span><span>留在大城市 →</span></div>
+      <div class="score-bar-bg">
+        <div class="score-bar-go" style="width:${goPercent}%"></div>
+        <div class="score-bar-stay" style="width:${stayPercent}%"></div>
       </div>
-      <div class="insight">
-        <div class="insight-title">💡 你的画像</div>
-        ${r.desc}
-      </div>
-      ${r.tips.map((t,i) => `
-        <div class="insight">
-          <div class="insight-title">${i === 0 ? '🎯' : i === 1 ? '📌' : '💪'} 建议${i+1}</div>
-          ${t}
-        </div>
-      `).join('')}
-      <p class="share-hint">📱 截图保存你的结果，或者分享给那个也在纠结的朋友</p>
-      <button class="btn btn-primary" onclick="startQuiz()">再测一次</button>
-      <button class="btn" style="background:var(--card);border:1.5px solid var(--divider);color:var(--text);margin-top:10px;padding:12px 32px;font-size:15px;" onclick="shareResult()">📤 分享结果</button>
-      <div class="bottom-safe"></div>
-    </div>`;
+    </div>
+    <div class="insight">
+      <div class="insight-title">💡 你的画像</div>
+      ${r.desc}
+    </div>
+    ${r.tips.map((t,i) => `<div class="insight"><div class="insight-title">${['🎯','📌','💪'][i]} 建议${i+1}</div>${t}</div>`).join('')}
+    <p class="share-hint">📱 截图保存你的结果，或者分享给那个也在纠结的朋友</p>
+    <button class="btn btn-primary" onclick="startQuiz()">再测一次</button>
+    <button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);margin-top:12px;padding:14px 32px;font-size:16px;" onclick="shareResult()">📤 分享结果</button>
+    <div class="bottom-safe"></div>
+  </div>`;
   window.scrollTo(0,0);
 }
 
@@ -350,11 +358,8 @@ function shareResult() {
   const score = calcScore();
   const r = getResult(score);
   const text = `我在「去还是留？城市选择测试」中测出来是「${r.label}」——${r.title}\n\n你也来测测：该留在大城市，还是回老家？`;
-  if (navigator.share) {
-    navigator.share({ title: '去还是留？城市选择测试', text }).catch(()=>{});
-  } else {
-    navigator.clipboard.writeText(text).then(() => alert('结果已复制，去分享给朋友吧！')).catch(()=>{});
-  }
+  if (navigator.share) { navigator.share({ title:'去还是留？城市选择测试', text }).catch(()=>{}); }
+  else { navigator.clipboard.writeText(text).then(()=>alert('结果已复制，去分享给朋友吧！')).catch(()=>{}); }
 }
 
 // Init
