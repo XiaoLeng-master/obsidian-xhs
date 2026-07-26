@@ -1,0 +1,11 @@
+﻿{
+    "apiKey":  "",
+    "customApiBase":  "https://cdn.12ai.org",
+    "selectedModel":  "nano-banana-pro",
+    "defaultAspectRatio":  "16:9",
+    "defaultResolution":  "1K",
+    "imageFolder":  "nano-banana-images",
+    "theme":  "light",
+    "colorPreset":  "鉁忥笍 Excalidraw 鎵嬪啓",
+    "systemPrompt":  ""
+}

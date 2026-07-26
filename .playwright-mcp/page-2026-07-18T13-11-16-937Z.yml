@@ -1,0 +1,78 @@
+- generic [ref=e1]:
+  - generic [ref=e10]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "AI小红书虚拟产品实战手册" [level=1] [ref=e22]
+        - generic [ref=e27]:
+          - generic [ref=e28]: "+4"
+          - generic [ref=e55]: 昨天修改
+      - generic [ref=e59]:
+        - generic [ref=e60]: 内容出品人：卡尔，高十二(boy)，一只舟，花音，李李智能体，飞锅，大师兄
+        - generic [ref=e65]: 手册出品方：AI 破局俱乐部团队
+        - generic [ref=e70]: 出品时间：2026 年 6 月 26 日
+        - generic [ref=e75]: 手册使用说明：本文旨在向你展示一个项目的更多可能性，帮助你更好地理解或实操。
+        - generic [ref=e87]: 手册出品方介绍：AI 破局俱乐部是 AI 领域学习实践的头部社群，社群里不只有免费的专栏课程，还有许多与 AI 相关的赚钱玩法，实践案例，以及能够代表 AI 行业发展的最前沿讯息，能够帮助星友快速觉察到 AIGC 领域的最新赚钱机会。
+        - paragraph [ref=e100]:
+          - text: 加载失败，
+          - button "点击重试" [ref=e101] [cursor=pointer]
+        - generic [ref=e109]: 第一部分：学前须知
+        - generic [ref=e115]: 一、学员指南
+        - generic [ref=e125]:
+          - text: 打卡详情点击右侧链接
+          - link [ref=e130] [cursor=pointer]:
+            - /url: https://d16rg8unadx.feishu.cn/wiki/ZLaIwajPIifY2mk17OEc3Ngrnuf?from=from_copylink
+        - generic [ref=e142]:
+          - generic [ref=e143]: ❗
+          - generic [ref=e148]:
+            - generic [ref=e149]: 下面是本次行动营的作业安排，请认真阅读~
+            - generic [ref=e154]: 📌常驻小尾巴【作业打卡】：
+            - generic [ref=e163]:
+              - text: 登录破局行动网站：
+              - link "https://aipoju.com/action" [ref=e166] [cursor=pointer]:
+                - /url: https://aipoju.com/action
+            - generic [ref=e167]: 找到自己报名的项目，按照打卡格式完成打卡。
+            - generic [ref=e176]:
+              - text: 具体流程可参考
+              - link [ref=e181] [cursor=pointer]:
+                - /url: https://d16rg8unadx.feishu.cn/wiki/ZLaIwajPIifY2mk17OEc3Ngrnuf?from=from_copylink
+            - generic [ref=e194]: 实战手册内部可能会布置一些实践作业，大家自行选择完成。
+            - generic [ref=e206]:
+              - generic [ref=e207]: "1."
+              - generic [ref=e208]: 行动营30天需要打卡18次。
+            - generic [ref=e213]:
+              - generic [ref=e214]: "2."
+              - generic [ref=e215]: 每天1次打卡机会，错过了不能补卡，如未满足打卡18次，保证金不退；中途退出不退保证金。
+            - generic [ref=e219]:
+              - generic [ref=e220]:
+                - generic [ref=e221]: "3."
+                - generic [ref=e222]: 水日志为无效日志，不计入正常的统计中，水日志界定范围：
+              - generic [ref=e226]:
+                - generic [ref=e229]:
+                  - generic [ref=e230]: a.
+                  - generic [ref=e231]: 完全乱写的驴唇不对马嘴，或者全是标点符号或者无意义字符的;
+                - generic [ref=e236]:
+                  - generic [ref=e237]: b.
+                  - generic [ref=e238]: 写和项目没关系的，写人生哲理的；
+                - generic [ref=e243]:
+                  - generic [ref=e244]: c.
+                  - generic [ref=e245]: 直接复制他人精选日志，直接复制高手分享内容，只复制没有任何想法和思考的内容
+                - generic [ref=e250]:
+                  - generic [ref=e251]: d.
+                  - generic [ref=e252]: 多个项目共用一个作业内容的；
+                - generic [ref=e257]:
+                  - generic [ref=e258]: e.
+                  - generic [ref=e259]: ...
+            - generic [ref=e264]:
+              - generic [ref=e265]: "4."
+              - generic [ref=e266]: "在群内提问时，建议具体描述你的问题，并加上 #举手 标签，方便圈友和教练更快定位到问题，并做出解答。也欢迎你来帮助其他船员解决问题，创造更大的价值。"
+    - generic [ref=e277]:
+      - generic [ref=e278]: 评论（5）
+      - generic [ref=e286] [cursor=pointer]: 跳转至首条评论
+  - textbox [ref=e293]
+  - dialog [ref=e296]:
+    - generic [ref=e297]:
+      - generic [ref=e298]: 提示
+      - generic [ref=e301]: 当前登录账号异常，请刷新重试。
+      - generic [ref=e303]:
+        - button "联系我们" [ref=e304] [cursor=pointer]
+        - button "刷新" [ref=e305] [cursor=pointer]

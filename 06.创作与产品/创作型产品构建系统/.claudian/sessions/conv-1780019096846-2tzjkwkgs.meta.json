@@ -1,0 +1,22 @@
+{
+  "id": "conv-1780019096846-2tzjkwkgs",
+  "providerId": "claude",
+  "title": "您好",
+  "createdAt": 1780019096846,
+  "updatedAt": 1780019498659,
+  "lastResponseAt": 1780019098523,
+  "sessionId": "81182def-ede3-47cf-b5ed-f4959fcd486a",
+  "providerState": {
+    "providerSessionId": "81182def-ede3-47cf-b5ed-f4959fcd486a"
+  },
+  "currentNote": "CLAUDE.md",
+  "usage": {
+    "model": "deepseek-v4-pro[1m]",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 1000000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}

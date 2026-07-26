@@ -1,0 +1,223 @@
+{
+  "tabManagerState": {
+    "openTabs": [
+      {
+        "tabId": "tab-1784556718636-ts3nj7t",
+        "conversationId": "conv-1784561100199-lrjrmayww"
+      },
+      {
+        "tabId": "tab-1784563512262-kf26pv5",
+        "conversationId": "conv-1784564024844-iqpdt0cr2"
+      },
+      {
+        "draftModel": "claude-code/deepseek-v4-pro[1m]",
+        "tabId": "tab-1784645786673-02gi8iu",
+        "conversationId": null
+      },
+      {
+        "tabId": "tab-1784646219154-nfrxpy5",
+        "conversationId": "conv-1785052063364-slm03sf2a"
+      },
+      {
+        "tabId": "tab-1785070946372-dbg36sf",
+        "conversationId": "conv-1785070961020-54wamvcfw"
+      }
+    ],
+    "activeTabId": "tab-1785070946372-dbg36sf"
+  },
+  "settingsProvider": "pi",
+  "model": "pi:kimi-coding/kimi-for-coding",
+  "sharedEnvironmentVariables": "",
+  "providerConfigs": {
+    "claude": {
+      "cliPath": "/Users/lvran/.local/bin/claude",
+      "environmentVariables": "HTTPS_PROXY=http://127.0.0.1:7890\nHTTP_PROXY=http://127.0.0.1:7890"
+    },
+    "codex": {
+      "enabled": true,
+      "environmentVariables": "HTTPS_PROXY=http://127.0.0.1:7890\nHTTP_PROXY=http://127.0.0.1:7890"
+    },
+    "pi": {
+      "enabled": true,
+      "cliPath": "/Users/lvran/.npm-global/bin/pi",
+      "environmentVariables": "KIMI_API_KEY=sk-kimi-16mfJZBATr5mTKYfZv7pXEYQcv6WTplPdBkvNla6eaSQiqbb4WowcyLM0TZSAI0X\nXSAI_API_KEY=xsai_sk_Sml01jkt0ZdXhx_OSBM1P9aUfQ56hWVS\nDEEPSEEK_API_KEY=sk-c55822d12dab473cae063a868629be21",
+      "discoveredModels": [
+        {
+          "provider": "kimi-coding",
+          "id": "kimi-for-coding",
+          "label": "Kimi For Coding",
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "kimi-coding",
+          "id": "kimi-for-coding-highspeed",
+          "label": "Kimi For Coding (Highspeed)",
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "kimi-coding",
+          "id": "kimi-k2-thinking",
+          "label": "Kimi K2 Thinking",
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "kimi-coding",
+          "id": "k2p7",
+          "label": "Kimi K2P7",
+          "contextWindow": 262144,
+          "maxTokens": 32768,
+          "input": [
+            "text",
+            "image"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "kimi-coding",
+          "id": "k3",
+          "label": "Kimi K3",
+          "contextWindow": 1048576,
+          "maxTokens": 131072,
+          "input": [
+            "text",
+            "image"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "xsai",
+          "id": "gpt-5.4",
+          "label": "GPT-5.4 (xsai)",
+          "contextWindow": 131072,
+          "maxTokens": 16384,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "xsai",
+          "id": "gpt-5.5",
+          "label": "GPT-5.5 (xsai)",
+          "contextWindow": 131072,
+          "maxTokens": 16384,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "deepseek",
+          "id": "deepseek-v4-pro",
+          "label": "DeepSeek V4 Pro",
+          "contextWindow": 1048576,
+          "maxTokens": 393216,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        },
+        {
+          "provider": "deepseek",
+          "id": "deepseek-v4-flash",
+          "label": "DeepSeek V4 Flash",
+          "contextWindow": 1048576,
+          "maxTokens": 393216,
+          "input": [
+            "text"
+          ],
+          "thinkingLevels": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high"
+          ],
+          "reasoning": true
+        }
+      ],
+      "visibleModels": [
+        "pi:kimi-coding/kimi-for-coding",
+        "pi:kimi-coding/kimi-for-coding-highspeed",
+        "pi:kimi-coding/kimi-k2-thinking",
+        "pi:kimi-coding/k2p7",
+        "pi:kimi-coding/k3",
+        "pi:xsai/gpt-5.4",
+        "pi:xsai/gpt-5.5",
+        "pi:deepseek/deepseek-v4-pro",
+        "pi:deepseek/deepseek-v4-flash"
+      ]
+    }
+  }
+}

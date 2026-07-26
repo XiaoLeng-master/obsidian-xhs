@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>测试品模板</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(135deg, #fff7ed, #fef3c7);
+      color: #2f2a25;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+    .app { width: 100%; max-width: 430px; min-height: 640px; background: rgba(255,255,255,0.86); border-radius: 28px; padding: 28px 22px; box-shadow: 0 20px 60px rgba(120,72,24,0.16); }
+    .center { text-align: center; }
+    h1 { font-size: 32px; line-height: 1.2; margin: 80px 0 18px; }
+    h2 { font-size: 22px; line-height: 1.4; margin: 16px 0; }
+    p { line-height: 1.75; color: #5f554b; }
+    .btn, .option { width: 100%; border: 0; border-radius: 18px; padding: 16px 18px; font-size: 16px; cursor: pointer; }
+    .btn { margin-top: 28px; background: #f97316; color: white; font-weight: 700; box-shadow: 0 10px 24px rgba(249,115,22,.28); }
+    .option { margin: 10px 0; background: #fff7ed; color: #3d332a; text-align: left; border: 1px solid #fed7aa; }
+    .option:active { transform: scale(.99); }
+    .progress { font-size: 14px; color: #9a6b3f; margin-bottom: 12px; }
+    .tag { display: inline-block; padding: 8px 12px; border-radius: 999px; background: #ffedd5; color: #c2410c; font-size: 14px; margin-bottom: 10px; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <section id="home" class="center">
+      <h1 id="testTitle">你内心真正属于哪种城市？</h1>
+      <p>回答几个小问题，看看你的隐藏气质更接近哪一种生活方式。</p>
+      <button class="btn" onclick="startTest()">开始测试</button>
+    </section>
+    <section id="quiz" class="hidden">
+      <div class="progress" id="progress"></div>
+      <h2 id="questionText"></h2>
+      <div id="options"></div>
+    </section>
+    <section id="result" class="hidden center">
+      <div class="tag">你的测试结果</div>
+      <h1 id="resultTitle"></h1>
+      <p id="resultText"></p>
+      <button class="btn" onclick="restartTest()">重新测试</button>
+    </section>
+  </main>
+  <script>
+    // 1. 在这里修改题目。type 对应 A/B/C/D 四种结果。
+    const questions = [
+      { text: "周末突然空出一天，你更想怎么过？", options: [
+        { text: "找个热闹地方逛逛", type: "A" },
+        { text: "在家安静充电", type: "B" },
+        { text: "去一个没计划过的地方", type: "C" },
+        { text: "约朋友吃饭聊天", type: "D" }
+      ]},
+      { text: "你更喜欢哪种生活节奏？", options: [
+        { text: "机会很多，节奏快一点也没关系", type: "A" },
+        { text: "稳定舒服，不被打扰", type: "B" },
+        { text: "自由松弛，随时可以变化", type: "C" },
+        { text: "有人情味，生活有烟火气", type: "D" }
+      ]}
+    ];
+    // 2. 在这里修改结果文案。
+    const results = {
+      A: { title: "高能都市型", text: "你适合机会密度高、节奏更快的地方。你不是闲不下来，而是需要一个能不断给你反馈和可能性的环境。" },
+      B: { title: "安静治愈型", text: "你更适合稳定、有边界感的生活。你真正需要的不是热闹，而是一个能让你慢慢恢复能量的空间。" },
+      C: { title: "自由探索型", text: "你适合开放、有变化的地方。你不喜欢被固定答案困住，更希望生活里保留一点未知和选择权。" },
+      D: { title: "烟火陪伴型", text: "你适合有人情味、有连接感的地方。你在意的不是城市多大，而是生活里有没有真实的关系和温度。" }
+    };
+    let current = 0;
+    let scores = { A: 0, B: 0, C: 0, D: 0 };
+    function show(id) { document.querySelectorAll("section").forEach(s => s.classList.add("hidden")); document.getElementById(id).classList.remove("hidden"); }
+    function startTest() { current = 0; scores = { A: 0, B: 0, C: 0, D: 0 }; showQuestion(); }
+    function showQuestion() {
+      show("quiz");
+      const q = questions[current];
+      document.getElementById("progress").innerText = `${current + 1} / ${questions.length}`;
+      document.getElementById("questionText").innerText = q.text;
+      const box = document.getElementById("options");
+      box.innerHTML = "";
+      q.options.forEach(opt => { const btn = document.createElement("button"); btn.className = "option"; btn.innerText = opt.text; btn.onclick = () => choose(opt.type); box.appendChild(btn); });
+    }
+    function choose(type) { scores[type]++; current++; if (current < questions.length) showQuestion(); else showResult(); }
+    function showResult() {
+      const type = Object.keys(scores).sort((a,b) => scores[b] - scores[a])[0];
+      document.getElementById("resultTitle").innerText = results[type].title;
+      document.getElementById("resultText").innerText = results[type].text;
+      show("result");
+    }
+    function restartTest() { show("home"); }
+  </script>
+</body>
+</html>

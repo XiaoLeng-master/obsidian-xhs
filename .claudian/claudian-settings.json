@@ -1,0 +1,129 @@
+{
+  "userName": "冷总",
+  "permissionMode": "normal",
+  "model": "claude-code/deepseek-v4-pro[1m]",
+  "thinkingBudget": "off",
+  "effortLevel": "high",
+  "serviceTier": "default",
+  "enableAutoTitleGeneration": true,
+  "titleGenerationModel": "claude-code/deepseek-v4-pro[1m]",
+  "excludedTags": [],
+  "mediaFolder": "",
+  "systemPrompt": "",
+  "persistentExternalContextPaths": [],
+  "sharedEnvironmentVariables": "ANTHROPIC_API_KEY=sk-d205680c403c4b6d942ede5bcc76161f\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-v4-pro[1m]",
+  "envSnippets": [
+    {
+      "id": "snippet-1780932282101",
+      "name": "ob",
+      "description": "",
+      "envVars": "OPENAI_API_KEY=xsai_sk_Sml01jkt0ZdXhx_OSBM1P9aUfQ56hWVS\nOPENAI_BASE_URL=https://api.xsai5.xyz/v1\nOPENAI_MODEL=gpt-5.5\nCODEX_SANDBOX=workspace-write",
+      "scope": "provider:codex"
+    }
+  ],
+  "customContextLimits": {
+    "deepseek-v4-pro[1m]": 1000000,
+    "gpt-5.5": 1000000,
+    "gpt-5.4-mini": 1000000,
+    "gpt-5.4": 1000000,
+    "gpt-5.3-codex-spark": 1000000,
+    "gpt-5.5-pro": 1000000
+  },
+  "customModelAliases": {},
+  "keyboardNavigation": {
+    "scrollUpKey": "w",
+    "scrollDownKey": "s",
+    "focusInputKey": "i"
+  },
+  "requireCommandOrControlEnterToSend": false,
+  "locale": "zh-CN",
+  "providerConfigs": {
+    "claude": {
+      "safeMode": "acceptEdits",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "loadUserSettings": false,
+      "enableChrome": false,
+      "enableBangBash": false,
+      "enableOpus1M": false,
+      "enableSonnet1M": false,
+      "customModels": "",
+      "lastModel": "claude-code/deepseek-v4-pro[1m]",
+      "environmentVariables": "",
+      "environmentHash": "ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic|ANTHROPIC_MODEL=deepseek-v4-pro[1m]"
+    },
+    "codex": {
+      "enabled": true,
+      "safeMode": "workspace-write",
+      "cliPath": "/Users/lvran/.npm-global/bin/codex",
+      "cliPathsByHost": {
+        "device:5d203805-876a-4bf8-b451-9b62666c5e81": "/Users/lvran/.npm-global/bin/codex"
+      },
+      "customModels": "",
+      "reasoningSummary": "detailed",
+      "environmentVariables": "OPENAI_API_KEY=xsai_sk_Sml01jkt0ZdXhx_OSBM1P9aUfQ56hWVS\nOPENAI_BASE_URL=https://api.xsai5.xyz/v1\nOPENAI_MODEL=gpt-5.5\nCODEX_SANDBOX=workspace-write",
+      "environmentHash": "OPENAI_API_KEY=xsai_sk_Sml01jkt0ZdXhx_OSBM1P9aUfQ56hWVS|OPENAI_BASE_URL=https://api.xsai5.xyz/v1|OPENAI_MODEL=gpt-5.5",
+      "installationMethodsByHost": {
+        "device:5d203805-876a-4bf8-b451-9b62666c5e81": "native-windows"
+      },
+      "wslDistroOverridesByHost": {}
+    },
+    "opencode": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "OPENCODE_ENABLE_EXA=1",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "selectedMode": "",
+      "thinkingOptionsByModel": {},
+      "visibleModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {
+        "device:5d203805-876a-4bf8-b451-9b62666c5e81": "/Users/lvran/.npm-global/bin/pi"
+      },
+      "discoveredModels": [],
+      "enabled": true,
+      "environmentHash": "",
+      "environmentVariables": "KIMI_API_KEY=sk-kimi-irhgt1cApMgcf7RT7VI1yROWk03z9n5QK9laepujIjVp4nbesgGs2PRJVf4eBpS7",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "toolMode": "all",
+      "visibleModels": [
+        "pi:kimi-coding/k3",
+        "pi:kimi-coding/k2p7",
+        "pi:kimi-coding/kimi-k2-thinking"
+      ]
+    }
+  },
+  "settingsProvider": "claude",
+  "savedProviderModel": {
+    "claude": "claude-code/deepseek-v4-pro[1m]",
+    "codex": "gpt-5.5",
+    "pi": "pi:kimi-coding/k3"
+  },
+  "savedProviderEffort": {
+    "claude": "high",
+    "codex": "medium",
+    "pi": "medium"
+  },
+  "savedProviderServiceTier": {
+    "codex": "default"
+  },
+  "savedProviderThinkingBudget": {},
+  "savedProviderPermissionMode": {
+    "claude": "normal",
+    "codex": "normal",
+    "pi": "yolo"
+  },
+  "lastCustomModel": "claude-code/deepseek-v4-pro[1m]",
+  "maxTabs": 10,
+  "enableAutoScroll": true,
+  "deferMathRenderingDuringStreaming": true,
+  "expandFileEditsByDefault": false,
+  "chatViewPlacement": "main-tab",
+  "hiddenProviderCommands": {}
+}

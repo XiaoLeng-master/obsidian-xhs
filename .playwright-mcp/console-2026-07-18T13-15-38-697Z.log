@@ -1,0 +1,77 @@
+[     569ms] [WARNING] The provided value 'Middle' is not a valid enum value of type CanvasTextBaseline. @ https://aipoju.com/assets/watermark.wimp_LMF.js:0
+[     597ms] [WARNING] The provided value 'Middle' is not a valid enum value of type CanvasTextBaseline. @ https://aipoju.com/assets/watermark.wimp_LMF.js:0
+[    1536ms] [LOG] getEncryptJssdkSession start {public_key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsPGZih…Czq+/GE+v8tZDqDscm4/6JK2UO+/ZKsYHGp24jiw0qQIDAQAB, key_meta: GBZGZWF0dXJlQ3JlYXRpb25PcGVuRG9jFQYWoK+AkMjy5tbUARaAiNalDQA=, timestamp: 1784380539372} @ https://sf1-scmcdn-cn.feishucdn.com/obj/feishu-static/docComponentSdk/lib/1.0.2.js:0
+[    2281ms] Identifier 'style' has already been declared
+[    2459ms] [LOG] =====[FetchLib]worker begin @ blob:https://d16rg8unadx.feishu.cn/15c505fe-c6b9-4d1f-a76d-e8f4fc94b8fc:0
+[    2894ms] [INFO] =====fetch_lib_worker_start,obj: {token: XVxudog********1MxAczP96nsc, blockId: undefined, version: undefined, mode: 7, limit: undefined} @ blob:https://d16rg8unadx.feishu.cn/15c505fe-c6b9-4d1f-a76d-e8f4fc94b8fc:0
+[    2896ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0
+[    4739ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://d16rg8unadx.feishu.cn/facade/search/pull_search_settings?search_setting_type=1:0
+[    4747ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://open.feishu.cn/open-apis/block/server/api/MGetBlockSsrTemplate:0
+[    5319ms] Uncaught (in promise) Error: request code fail
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:22:28263)
+[    5485ms] Uncaught (in promise) Error: user not found
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/eesz/bear/docx/module/ee/docs/docx/1.0.17.6349/index_merged_es6.js:6:759699)
+[    5485ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/accounts/web/user?app_id=12&_t=1784380543905:0
+[    5506ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    5635ms] Uncaught (in promise) Error: user not found
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/eesz/bear/docx/module/ee/docs/docx/1.0.17.6349/index_merged_es6.js:6:759699)
+[    5675ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://project.feishu.cn/goapi/v1/user/assets/login_assets:0
+[    5677ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://open.feishu.cn/lark/app_explorer/api/GetBlockTemplateList:0
+[    5679ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/intercept/ccm/policystatus?policyType=DLP&entityType=DOCX&token=XVxudogFZo5srbx1MxAczP96nsc&owner_uid=7646243447203957709&tenant_id=7219875542412591108:0
+[    5723ms] Uncaught (in promise) Error: user not found
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/eesz/bear/docx/module/ee/docs/docx/1.0.17.6349/index_merged_es6.js:6:759699)
+[    5728ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    5806ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    5875ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    7291ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://d16rg8unadx.feishu.cn/baike/v2/api/highlight_ignore/list:0
+[    7292ms] Uncaught (in promise) Error: Request failed with status code 401
+    at e.exports (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:64:10073)
+    at e.exports (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:153:442341)
+    at _.onreadystatechange (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:7:144584)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:46766)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:45552)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:45657)
+    at a (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:44374)
+[    8001ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8003ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/intercept/ccm/policystatus?policyType=DLP&entityType=DOCX&token=XVxudogFZo5srbx1MxAczP96nsc&owner_uid=7646243447203957709&tenant_id=7219875542412591108:0
+[    8004ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://d16rg8unadx.feishu.cn/baike/v2/api/highlight_ignore/list:0
+[    8020ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8032ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8080ms] Uncaught (in promise) Error: Request failed with status code 401
+    at e.exports (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:64:10073)
+    at e.exports (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:153:442341)
+    at _.onreadystatechange (https://lf-package-cn.feishucdn.com/obj/feishu-static/ccm-vmok/web/static/js/docx_app_spa.a1da4971.js:7:144584)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:46766)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:45552)
+    at <anonymous> (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:45657)
+    at a (https://lf-package-cn.feishucdn.com/obj/feishu-static/lmp/scs/policy-sdk-6.2.14.js:0:44374)
+[    8158ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8160ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8161ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8208ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8210ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8212ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8222ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8259ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8280ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8313ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8328ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    8358ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[    9587ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/guardian/enforce:0
+[   24773ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   24951ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[   25004ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[   25054ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[   25106ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-lark-api.feishu.cn/im/gateway/:0
+[   25416ms] [ERROR] Failed to load resource: the server responded with a status of 400 () @ https://open.feishu.cn/lark/app_explorer/api/GetBlockTemplateList:0
+[   32402ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0
+[   44491ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   44528ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   44615ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   44619ms] [ERROR] The script resource is behind a redirect, which is disallowed. @ :0
+[   47157ms] [ERROR] Access to fetch at 'https://internal-api-space.feishu.cn/space/api/ssr/docx/blocks/' from origin 'https://aipoju.com' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ https://aipoju.com/docx/c80f5f72-21a9-419b-a6ea-d2cd6d27744a/XVxudogFZo5srbx1MxAczP96nsc:0
+[   47158ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://internal-api-space.feishu.cn/space/api/ssr/docx/blocks/:0
+[   62412ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0
+[   92461ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0
+[  122410ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0
+[  152407ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://internal-api-security.feishu.cn/lark/scs/compliance/ping:0

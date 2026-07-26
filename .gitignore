@@ -1,0 +1,10 @@
+# 系统文件
+.DS_Store
+
+# Obsidian 工作区缓存
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# 飞书同步脚本的依赖（可随时 npm install 恢复）
+飞书同步脚本/node_modules/

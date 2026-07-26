@@ -1,0 +1,23 @@
+{
+  "id": "conv-1784267190448-ikflmj2kw",
+  "providerId": "claude",
+  "title": "Create unboxing guide",
+  "titleGenerationStatus": "success",
+  "createdAt": 1784267190448,
+  "updatedAt": 1784267432354,
+  "lastResponseAt": 1784267421939,
+  "sessionId": "dfc96634-5ea9-4b61-80b4-b0b62d398a60",
+  "providerState": {
+    "providerSessionId": "dfc96634-5ea9-4b61-80b4-b0b62d398a60"
+  },
+  "usage": {
+    "model": "haiku",
+    "inputTokens": 559,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 46208,
+    "contextWindow": 1000000,
+    "contextTokens": 46767,
+    "percentage": 5,
+    "contextWindowIsAuthoritative": true
+  }
+}

@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - button "首页" [ref=e9] [cursor=pointer]
+        - button "AI项目库" [ref=e11] [cursor=pointer]
+        - button "破局行动" [ref=e13] [cursor=pointer]
+        - button "线下组局" [ref=e15] [cursor=pointer]
+        - button "破局学院" [ref=e17] [cursor=pointer]
+      - generic [ref=e19]:
+        - generic [ref=e21]:
+          - textbox "搜索主题、用户、破局行动、组局..." [ref=e22]
+          - img "search" [ref=e24] [cursor=pointer]
+        - button "AI问答" [ref=e27] [cursor=pointer]:
+          - img "AI问答" [ref=e28]
+        - generic [ref=e31] [cursor=pointer]:
+          - img "user" [ref=e33]
+          - text: 立即登录
+    - main [ref=e36]:
+      - generic [ref=e41]:
+        - generic [ref=e42]: 扫码登录
+        - generic [ref=e44]: 请使用微信扫码登录
+        - generic [ref=e45]:
+          - text: 登录即表示同意
+          - link "《AI破局俱乐部服务协议》" [ref=e46] [cursor=pointer]:
+            - /url: /service-agreement
+    - generic [ref=e47]:
+      - link "服务协议" [ref=e48] [cursor=pointer]:
+        - /url: /service-agreement
+      - generic [ref=e49]: "|"
+      - link "©2023 AI破局俱乐部 版权所有 京ICP备2025103434号-2" [ref=e50] [cursor=pointer]:
+        - /url: https://beian.miit.gov.cn/
+  - generic [ref=e52]:
+    - img "exclamation-circle" [ref=e53]
+    - text: 请先登录

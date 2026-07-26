@@ -1,0 +1,124 @@
+{
+  "userName": "小冷",
+  "permissionMode": "normal",
+  "model": "deepseek-v4-pro[1m]",
+  "thinkingBudget": "low",
+  "effortLevel": "high",
+  "serviceTier": "default",
+  "enableAutoTitleGeneration": false,
+  "titleGenerationModel": "",
+  "excludedTags": [],
+  "mediaFolder": "",
+  "systemPrompt": "",
+  "persistentExternalContextPaths": [],
+  "sharedEnvironmentVariables": "ANTHROPIC_API_KEY=sk-c55822d12dab473cae063a868629be21\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-v4-pro[1m]",
+  "envSnippets": [
+    {
+      "id": "snippet-1780018908490",
+      "name": "1",
+      "description": "",
+      "envVars": "ANTHROPIC_AUTH_TOKEN=sk-c55822d12dab473cae063a868629be21\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-v4-pro[1m]",
+      "scope": "provider:claude",
+      "contextLimits": {
+        "deepseek-v4-pro[1m]": 1000000
+      }
+    },
+    {
+      "id": "snippet-1780328555841",
+      "name": "国内dp4",
+      "description": "",
+      "envVars": "ANTHROPIC_API_KEY=sk-c55822d12dab473cae063a868629be21\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-v4-pro[1m]",
+      "scope": "provider:claude",
+      "contextLimits": {
+        "deepseek-v4-pro[1m]": 1000000
+      }
+    }
+  ],
+  "customContextLimits": {
+    "deepseek-v4-pro[1m]": 1000000,
+    "deepseek-v4-flash": 1000000
+  },
+  "customModelAliases": {},
+  "keyboardNavigation": {
+    "scrollUpKey": "w",
+    "scrollDownKey": "s",
+    "focusInputKey": "i"
+  },
+  "requireCommandOrControlEnterToSend": false,
+  "locale": "zh-CN",
+  "providerConfigs": {
+    "claude": {
+      "safeMode": "acceptEdits",
+      "cliPath": "/Users/lvran/.npm-global/bin/claude",
+      "cliPathsByHost": {
+        "device:5d203805-876a-4bf8-b451-9b62666c5e81": "/opt/homebrew/bin/claude"
+      },
+      "loadUserSettings": false,
+      "enableChrome": true,
+      "enableBangBash": true,
+      "enableOpus1M": true,
+      "enableSonnet1M": true,
+      "customModels": "",
+      "lastModel": "haiku",
+      "environmentVariables": "ANTHROPIC_AUTH_TOKEN=sk-c55822d12dab473cae063a868629be21\nANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic\nANTHROPIC_MODEL=deepseek-v4-pro[1m]\nANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro[1m]\nANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro[1m]\nANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash\nCLAUDE_CODE_SUBAGENT_MODEL=deepseek-v4-flash\nCLAUDE_CODE_EFFORT_LEVEL=max",
+      "environmentHash": "ANTHROPIC_AUTH_TOKEN=sk-c55822d12dab473cae063a868629be21|ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic|ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-v4-flash|ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-v4-pro[1m]|ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-v4-pro[1m]|ANTHROPIC_MODEL=deepseek-v4-pro[1m]"
+    },
+    "codex": {
+      "enabled": false,
+      "safeMode": "workspace-write",
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "customModels": "",
+      "reasoningSummary": "detailed",
+      "environmentVariables": "",
+      "environmentHash": "",
+      "installationMethodsByHost": {
+        "device:5d203805-876a-4bf8-b451-9b62666c5e81": "native-windows"
+      },
+      "wslDistroOverridesByHost": {}
+    },
+    "opencode": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "selectedMode": "",
+      "thinkingOptionsByModel": {},
+      "visibleModels": []
+    },
+    "pi": {
+      "cliPath": "",
+      "cliPathsByHost": {},
+      "discoveredModels": [],
+      "enabled": false,
+      "environmentHash": "",
+      "environmentVariables": "",
+      "modelAliases": {},
+      "preferredThinkingByModel": {},
+      "toolMode": "all",
+      "visibleModels": []
+    }
+  },
+  "settingsProvider": "claude",
+  "savedProviderModel": {
+    "claude": "deepseek-v4-pro[1m]"
+  },
+  "savedProviderEffort": {
+    "claude": "high"
+  },
+  "savedProviderServiceTier": {},
+  "savedProviderThinkingBudget": {
+    "claude": "low"
+  },
+  "savedProviderPermissionMode": {},
+  "lastCustomModel": "deepseek-v4-pro[1m]",
+  "maxTabs": 10,
+  "tabBarPosition": "input",
+  "enableAutoScroll": true,
+  "deferMathRenderingDuringStreaming": true,
+  "chatViewPlacement": "right-sidebar",
+  "hiddenProviderCommands": {}
+}
