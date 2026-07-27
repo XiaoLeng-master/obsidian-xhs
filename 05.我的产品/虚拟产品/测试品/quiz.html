@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#1a1a2e">
+<meta name="theme-color" content="#fafaf8">
 <title>去还是留？城市选择测试</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg: #f5f0eb;
+    --bg: #fafaf8;
     --card: #ffffff;
-    --text: #2c2c2c;
-    --sub: #7a7a7a;
-    --primary: #e07a5f;
-    --primary-dark: #c9654b;
-    --stay: #3d5a80;
-    --go: #ee6c4d;
-    --progress-bg: #e8ddd0;
-    --divider: #ede6dc;
-    --shadow: 0 2px 20px rgba(0,0,0,0.05);
-    --radius: 18px;
+    --text: #1f1f1f;
+    --sub: #949494;
+    --primary: #6b9080;
+    --primary-dark: #5a7d6e;
+    --stay: #7b9bad;
+    --go: #c4a87c;
+    --progress-bg: #ece9e3;
+    --divider: #f0ede7;
+    --shadow: 0 1px 3px rgba(0,0,0,0.03), 0 2px 12px rgba(0,0,0,0.04);
+    --radius: 16px;
   }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
@@ -31,16 +31,19 @@
     justify-content: center;
     -webkit-font-smoothing: antialiased;
   }
-  .app { width: 100%; max-width: 800px; min-height: 100dvh; position: relative; overflow-x: hidden; }
+  .app { width: 100%; max-width: 800px; height: 100dvh; display: flex; flex-direction: column; overflow: hidden; }
+
+  /* Scrollable quiz area */
+  .quiz-scroll { flex: 1; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; }
 
   /* Progress */
-  .progress-wrap { padding: 28px 28px 0; }
+  .progress-wrap { padding: 28px 28px 0; flex-shrink: 0; }
   .progress-bar { height: 5px; background: var(--progress-bg); border-radius: 3px; overflow: hidden; }
   .progress-fill { height: 100%; background: linear-gradient(90deg, var(--stay), var(--primary), var(--go)); border-radius: 3px; transition: width 0.4s ease; width: 0%; }
   .progress-text { text-align: right; font-size: 14px; color: var(--sub); margin-top: 8px; }
 
   /* Pages */
-  .page { display: none; flex-direction: column; padding: 0 28px 40px; animation: fadeSlideIn 0.3s ease; }
+  .page { display: none; flex-direction: column; padding: 0 28px 24px; animation: fadeSlideIn 0.3s ease; }
   .page.active { display: flex; }
   @keyframes fadeSlideIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -49,7 +52,7 @@
   .landing-icon { font-size: 64px; margin-bottom: 20px; }
   .landing h1 { font-size: 30px; font-weight: 700; line-height: 1.4; margin-bottom: 12px; color: var(--text); }
   .landing .sub { font-size: 17px; color: var(--sub); line-height: 1.7; margin-bottom: 8px; }
-  .landing .hint { font-size: 14px; color: #b0a89a; margin-bottom: 36px; }
+  .landing .hint { font-size: 14px; color: #aaa396; margin-bottom: 36px; }
   .landing .stats { display: flex; gap: 32px; justify-content: center; margin-bottom: 40px; }
   .landing .stat-num { font-size: 32px; font-weight: 700; color: var(--primary); }
   .landing .stat-label { font-size: 13px; color: var(--sub); margin-top: 4px; }
@@ -61,7 +64,7 @@
     -webkit-tap-highlight-color: transparent; user-select: none;
   }
   .btn:active { transform: scale(0.97); }
-  .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 16px rgba(224,122,95,0.3); }
+  .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 4px 14px rgba(107,144,128,0.25); }
   .btn-primary:hover { background: var(--primary-dark); }
   .btn-primary:disabled { opacity: 0.4; cursor: not-allowed; box-shadow: none; }
   .btn-primary:disabled:active { transform: none; }
@@ -76,15 +79,15 @@
     background: var(--card); font-size: 17px; color: var(--text); text-align: left; cursor: pointer;
     transition: border-color 0.15s, background 0.15s; -webkit-tap-highlight-color: transparent; line-height: 1.5; text-wrap: pretty;
   }
-  .q-opt:active { border-color: var(--primary); background: #fef8f5; }
-  .q-opt.selected { border-color: var(--primary); background: #fef3ee; font-weight: 500; }
+  .q-opt:active { border-color: var(--primary); background: #f4f7f5; }
+  .q-opt.selected { border-color: var(--primary); background: #edf4f0; font-weight: 500; }
 
   /* Results */
   .result { text-align: center; padding-top: 40px; align-items: center; }
   .result-type { display: inline-block; padding: 8px 24px; border-radius: 50px; font-size: 15px; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px; }
-  .result-type.stay { background: #e8f0fa; color: var(--stay); }
-  .result-type.go { background: #fef0ec; color: var(--go); }
-  .result-type.swing { background: #fef8e5; color: #b8860b; }
+  .result-type.stay { background: #edf3f6; color: var(--stay); }
+  .result-type.go { background: #f7f1e8; color: var(--go); }
+  .result-type.swing { background: #f2efe9; color: #9b8c7a; }
   .result h2 { font-size: 26px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
   .result .score-bar-wrap { width: 100%; max-width: 440px; margin: 16px auto 28px; }
   .result .score-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--sub); margin-bottom: 6px; }
@@ -96,14 +99,14 @@
   .result .insight-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; border-left: 4px solid var(--primary); padding-left: 14px; }
   .result .share-hint { font-size: 14px; color: var(--sub); margin: 24px 0 28px; }
 
-  /* Sticky nav for questions */
-  .q-nav { position: sticky; bottom: 0; background: var(--bg); padding: 16px 0 20px; z-index: 10; display: flex; justify-content: space-between; gap: 12px; }
+  /* Nav bar — sits naturally at bottom of app, never moves */
+  .q-nav { flex-shrink: 0; background: var(--bg); padding: 12px 28px max(20px, env(safe-area-inset-bottom, 20px)); display: flex; justify-content: space-between; gap: 12px; border-top: 1px solid var(--divider); }
 
   /* Desktop: center the app with a subtle card feel */
   @media (min-width: 768px) {
-    body { background: #ede6dc; padding: 40px 0; align-items: flex-start; }
+    body { background: #ece9e3; padding: 40px 0; align-items: flex-start; }
     .app {
-      max-width: 720px; min-height: auto; background: var(--bg); border-radius: 16px;
+      max-width: 720px; height: auto; min-height: 600px; background: var(--bg); border-radius: 16px;
       box-shadow: 0 4px 30px rgba(0,0,0,0.08); margin: 0 16px;
     }
   }
@@ -333,7 +336,7 @@ let currentQ = 0, answers = [];
 const app = document.getElementById('app');
 
 function renderLanding() {
-  app.innerHTML = '<div class="page active landing">'
+  app.innerHTML = '<div class="quiz-scroll"><div class="page active landing">'
     + '<div class="landing-icon">🏙️</div>'
     + '<h1>去还是留？<br>城市选择测试</h1>'
     + '<p class="sub">30道深度问题，帮你面对那个压了很久的问题：</p>'
@@ -346,7 +349,14 @@ function renderLanding() {
     + '</div>'
     + '<button class="btn btn-primary" onclick="startQuiz()">开始测试</button>'
     + '<div class="bottom-safe"></div>'
+    + '</div>'
     + '</div>';
+}
+
+// Prevent 1-2 character orphans at line end by wrapping last N chars in nowrap
+function noOrphan(text, n) {
+  if (!text || text.length <= n + 1) return text || '';
+  return text.slice(0, -n) + '<span style="white-space:nowrap;">' + text.slice(-n) + '</span>';
 }
 
 function renderQuestion(idx) {
@@ -354,26 +364,27 @@ function renderQuestion(idx) {
   var progress = Math.round((idx / QUESTIONS.length) * 100);
   var selectedIdx = answers[idx] !== undefined ? answers[idx] : -1;
   var optsHTML = q.opts.map(function(o,i){
-    return '<button class="q-opt' + (i===selectedIdx?' selected':'') + '" data-opt="' + i + '"><b>' + 'ABCD'[i] + '.</b> ' + o.text + '</button>';
+    return '<button class="q-opt' + (i===selectedIdx?' selected':'') + '" data-opt="' + i + '"><b>' + 'ABCD'[i] + '.</b> ' + noOrphan(o.text, 5) + '</button>';
   }).join('');
   var prevHTML = idx > 0 ? '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);flex:1;padding:14px;font-size:16px;" id="prevBtn">← 上一题</button>' : '<div style="flex:1"></div>';
   var nextLabel = idx < QUESTIONS.length - 1 ? '下一题 →' : '查看结果 ✨';
 
-  app.innerHTML = '<div class="progress-wrap">'
+  app.innerHTML = '<div class="quiz-scroll">'
+    + '<div class="progress-wrap">'
     + '<div class="progress-bar"><div class="progress-fill" style="width:' + progress + '%"></div></div>'
     + '<div class="progress-text">' + (idx+1) + ' / ' + QUESTIONS.length + '</div>'
     + '</div>'
     + '<div class="page active">'
     + '<div class="q-card">'
     + '<div class="q-num">' + q.dim + ' · 第' + (idx+1) + '题</div>'
-    + '<div class="q-text"><b>' + (idx+1) + '.</b> ' + q.q + '</div>'
+    + '<div class="q-text"><b>' + (idx+1) + '.</b> ' + noOrphan(q.q, 5) + '</div>'
     + '<div class="q-options" id="options-' + idx + '">' + optsHTML + '</div>'
+    + '</div>'
+    + '</div>'
     + '</div>'
     + '<div class="q-nav">'
     + prevHTML
     + '<button class="btn btn-primary" style="flex:1;padding:14px;font-size:16px;" id="nextBtn" ' + (selectedIdx===-1?'disabled':'') + '>' + nextLabel + '</button>'
-    + '</div>'
-    + '<div class="bottom-safe"></div>'
     + '</div>';
 
   var optsEl = document.getElementById('options-' + idx);
@@ -420,32 +431,32 @@ function getResult(score) {
   if (score >= 24) return {
     type:'stay', label:'扎根型', emoji:'🏙️',
     title:'这座城市，就是你的土壤',
-    desc:'30道题下来，你的回答指向同一个方向：你的根已经扎在这里了。不是没办法才留下，是你选择了这里——你的职业、你的关系、你的自我认同都和这座城市长在了一起。偶尔的动摇不是真的想走，是需要停下来喘口气。',
-    tips:['你在这座城市还有没完成的事——去完成它，别半途而废','孤独感是每个在异乡扎根的人都有的，把"经营关系"当作和健身一样重要的事','父母那边，远程陪伴也可以很实在——每周固定视频、每年多回去几次']
+    desc:'你的30道题答案指向同一个方向：你的根已经扎在这里了。你的职业认同、社交关系、生活节奏都和这座城市深度绑定。你不是"没办法才留下"，你是主动选择了这里——而且这个选择对现在的你来说，仍然是最优解。<br><br>偶尔冒出来的"要不要回去"的念头，本质不是方向问题，是能量问题。你太累了，需要休息，需要调整节奏——但那不代表你要离开。就像一个人跑马拉松跑到30公里想放弃，不是因为他不想跑了，是因为他的身体在求救。你的"想回去"，是你身心在求救。<br><br>你需要的是一个修复计划，不是一个撤退计划。',
+    tips:['把"想回去"的声音当成一个信号——不是让你走，是提醒你有些事情该改变了：是工作量太大？是社交太少？是太久没休假？找到那个根源，解决它。','你的职业还有上升空间——别在快看到结果的时候放弃。给自己设定一个具体的阶段性目标（比如"升到XX职级"或"存到XX万"），达到了再重新评估。','孤独感是异乡扎根的标配，不是缺陷。把它当成一个需要管理的变量：每周固定约一次朋友、报一个线下的课或俱乐部、养一只猫——你需要的是在这座城市建立一个"非工作的身份"。','父母那边，远程陪伴可以很实在。每周固定视频时间、每年多回去几次（哪怕只是周末）、给父母安排一次体检——你在行动，愧疚感就会减轻。']
   };
   if (score >= 10) return {
     type:'stay', label:'偏向留下', emoji:'🌆',
     title:'你暂时属于这里，但别把头埋进沙子里',
-    desc:'你倾向于留下，你的分数里藏着一些拉扯——可能是异地的那个人、可能是父母的体检报告、可能是一笔你不敢细算的经济账。这些拉扯现在还不足以让你走，但如果一直不面对，它们会越长越大。',
-    tips:['把那个一直在拉扯你的因素从"背景噪音"变成"待解决问题"——给它一个具体的解决时间表','如果异地是核心问题，和对方一起做一遍这30道题，对比你们的答案','关注你选了极端负分的那些题——那些是你将来可能改变主意的伏笔']
+    desc:'你的整体倾向是留下，但有几个变量在悄悄拉扯你——可能是异地的那个人、可能是父母最近的身体变化、可能是一笔你一直不敢细算的经济账。这些变量现在还没强到让你走，但它们在恶化。<br><br>最危险的状态不是"决定走"，而是"假装这些拉扯不存在"。如果你不主动面对它们，它们不会自己消失——它们会在一两年后的某一天，变成一个你措手不及的紧急事件。<br><br>好消息是：你现在还有时间。你的职业和财务基础都还不错，你不需要恐慌，你只需要一个"监控计划"——持续跟踪那几个拉扯变量，设好触发条件。',
+    tips:['找到你在测试中选了极端负分的那几道题——那是你的软肋，也是你未来可能改变主意的伏笔。把那几个问题写下来，每季度自问一次：情况是变好了、还是变差了？','如果异地恋是核心拉扯：和伴侣一起做一遍这30道题，对比答案。你们的分歧点在哪一目了然。然后一起定一个"最晚结束异地"的时间节点。','给自己设一个明确的"重新评估窗口"——比如18个月后。在此之前全力以赴留在这里，不内耗、不摇摆。18个月到了，再根据当时的数据做决定。','在等待窗口期到来的同时，保持对老家机会的关注。不是要马上投简历，而是要知道：如果明天我必须回去，我有哪些选择？知道的越多，恐惧越少。']
   };
   if (score >= -7) return {
     type:'swing', label:'摇摆型', emoji:'⚖️',
     title:'你不是纠结，你是天平的两端刚好平衡',
-    desc:'你的留和走几乎打成平手。这不是坏事——说明你不是在逃避，你是真的面对了两边的全部重量。这种情况下，任何一个选择都不会是"错"的。但有一个风险：如果你一直不选，"不做决定"本身就会成为最消耗你的决定。',
-    tips:['给摇摆设一个截止日期——比如三个月后，你必须做一个临时决定并执行它','找你选了极端答案的那几道题——那些可能是你真正的底牌，其他都是噪音','分别找"留在大城市10年的人"和"回老家5年的人"认真聊一次，不靠想象做决定']
+    desc:'你的留和走几乎打成平手。这不是"优柔寡断"——说明你真的、诚实地面对了两个方向的所有重量。你没有在逃避，你只是暂时还看不清楚。<br><br>在势均力敌的情况下，任何一个选择都不会是"错的"。但有一个真正的风险：如果你一直不做决定，"悬浮"本身就会成为最大的消耗。你会在两座城市之间、两种人生之间、两个版本的自己之间——哪个都没过好。<br><br>你需要的不一定是一个"最终答案"。你可能需要的是一段"试验期"——给自己三个月，假设你已经做了决定，按那个方向去活。三个月后，你的身体会告诉你答案。',
+    tips:['翻回你的答卷，找到那道你选了最极端答案（+2或-2）的题——那可能才是你的底牌。其他所有纠结都是噪音。','做一个"三个月试验"：假设你决定留下，这三个月全力经营这座城市的生活——约朋友、探索新地方、做一个副业。三个月后如果还是想走，那就认真考虑走。反之亦然。','分别找两种人深度聊一次——一个是在大城市待了10年以上的人，一个是回老家5年以上的人。不要问他们"你后不后悔"，问他们"你的一天是什么样的"。','给摇摆设一个硬性截止日期。不是"想清楚了再决定"，是"先决定，再用行动来验证"。因为有些答案，只想是想不出来的——你得活出来。']
   };
   if (score >= -23) return {
     type:'go', label:'偏向回去', emoji:'🏡',
     title:'回去，也许是你欠自己的一场认真尝试',
-    desc:'你的答案指向回去。你可能已经想了很久了——不是因为大城市不好，是因为你的优先级在变。你在乎的人、你想要的生活节奏、你对"好人生"的定义，已经悄悄从"拼一把"变成了"稳一点"。这不是退缩，是你在重新校准什么对你最重要。',
-    tips:['把"回去"当成一个项目来计划：目标城市、目标行业、收入预期、时间节点——像做工作OKR一样做你的回去计划','回去不等于回到原点——你在外面练的一身本事，在老家可能就是降维打击','新一线或省会城市是一个很好的折中方案——离父母近、但不用回到熟人社会']
+    desc:'你的答案指向回去。不是"大城市不好"——实际上你可能很喜欢这座城市。但你的优先级在悄悄变化：你在乎的人、你想要的生活节奏、你对"好人生"的定义，已经从"拼一把"变成了"稳一点"。这不是退缩，是你的价值观在自然演进。<br><br>但"偏向回去"和"已经准备好回去"是两件事。你现在的状态可能是：心里想走，但条件还不够。这很危险——因为"想走但走不了"是最消耗人的状态。你需要把模糊的"想回去"变成一个具体的"回去计划"。<br><br>记住一个事实：带着一线城市经验回去的人，和一直待在老家的人，是完全不同的两种人。你不是在"退"，你是在用你的积累换一种新的生活方式。你的能力不会因为换了一个城市就消失——它只会换一种方式兑现。',
+    tips:['把"回去"当成一个工作项目来做：目标城市（可以不止一个候选）、目标行业和岗位、预期收入范围、时间节点。像做OKR一样把这件事拆解成可执行的任务。','回去之前，先在这边把能攒的"弹药"攒够：存款目标是多少？技能证书要不要考？人脉关系要不要提前建立？回去不是买一张车票，是启动一个项目。','考虑新一线或省会城市作为过渡方案——离父母近，但产业相对发达，不需要回到纯粹的熟人社会。成都、武汉、长沙、合肥、西安，都比你想的有机会。','别用"我不想卷了"作为回去的唯一理由。逃避一个城市的疲惫，到了另一个城市会变成另一种疲惫。确保你是"走向什么"，而不是"逃离什么"。']
   };
   return {
     type:'go', label:'回归型', emoji:'🌅',
     title:'你其实早就知道答案了',
-    desc:'做完这30道题，你可能比做题之前更确定了一件事——你知道自己该走了。你只是需要一个声音帮你确认：这不是失败，这是你主动选择的下一个阶段。23%的人回老家后15个月内又回了大城市，但你可能不是那23%。你更可能是那77%——回去之后发现，原来自己一直在等的，就是这一刻。',
-    tips:['别把回去当成"撤退"——你带着一线城市的经验、视野和人脉回去，不是从头开始，是换赛道加速','做一个具体的"回去时间表"：什么时候提离职、什么时候打包、到了之后第一件事做什么','你最舍不得这座城市的那些东西——有些可以带走（能力、习惯、审美），有些可以换种方式拥有（每年回来一趟、保持线上联系）']
+    desc:'做完这30道题，你比做之前更确定了一件事：你知道自己该走了。你的分数、你的选择、你在某些题上的毫不犹豫，都在说同一句话——你已经做出了决定，只是在等自己承认。<br><br>这不是失败。你在外面这些年，看了更大的世界、学会了在陌生城市生存、积累了专业能力——这些东西不会因为一张火车票就消失。你带着它们回去，不是"灰溜溜地回家"，是带着弹药转战下一个战场。<br><br>23%的人回老家后15个月内又回了大城市。但你可能不是那23%。你更可能是那77%——回去之后发现：原来轻松的感觉是这样的，原来周末可以回家吃饭是这样的，原来钱不需要全部交给房东是这样的。原来自己一直在等的，就是这一刻。',
+    tips:['制定一个具体的"回去时间表"：什么时候提离职（拿到年终奖后？项目交付后？）、什么时候打包、到了之后第一件事做什么。模糊的计划不会被执行，只有具体的日期才会。','回去之前，把大城市的"福利"尽量用够：体检、牙科、社保公积金处理好、能远程办的事提前办完。离开一线城市后再回来办这些事，成本很高。','你最舍不得的——可能是一种"我是独立的人"的感觉。回去之后，这个感觉不会自动消失，但需要你主动维护：保持经济独立、保持自己的社交圈、保持和老朋友的线上联系。','如果回去之后发现不对——没关系。23%的人会回来。你不是没有退路，你是知道自己要什么之后，再做的第二次选择。那时候的你，比现在更清楚。']
   };
 }
 
@@ -457,7 +468,8 @@ function showResult() {
   var goPercent = Math.round(((score - minPossible) / (maxPossible - minPossible)) * 100);
   var stayPercent = 100 - goPercent;
 
-  app.innerHTML = '<div class="page active result">'
+  app.innerHTML = '<div class="quiz-scroll">'
+    + '<div class="page active result">'
     + '<div class="result-type ' + r.type + '">' + r.label + ' ' + r.emoji + '</div>'
     + '<h2>' + r.title + '</h2>'
     + '<div class="score-bar-wrap">'
@@ -469,9 +481,11 @@ function showResult() {
     + '<div class="insight"><div class="insight-title">你的画像</div>' + r.desc + '</div>'
     + r.tips.map(function(t,i){ return '<div class="insight"><div class="insight-title">建议' + (i+1) + '</div>' + t + '</div>'; }).join('')
     + '<p class="share-hint">📱 截图保存你的结果，或者分享给那个也在纠结的朋友</p>'
-    + '<button class="btn btn-primary" onclick="startQuiz()">再测一次</button>'
-    + '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);margin-top:12px;padding:14px 32px;font-size:16px;" onclick="shareResult()">📤 分享结果</button>'
-    + '<div class="bottom-safe"></div>'
+    + '</div>'
+    + '</div>'
+    + '<div class="q-nav">'
+    + '<button class="btn btn-primary" style="flex:1;padding:14px;font-size:16px;" onclick="startQuiz()">再测一次</button>'
+    + '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);flex:1;padding:14px;font-size:16px;" onclick="shareResult()">📤 分享结果</button>'
     + '</div>';
   window.scrollTo(0,0);
 }
