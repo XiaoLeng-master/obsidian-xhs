@@ -69,12 +69,12 @@
   /* Question Card */
   .q-card { background: var(--card); border-radius: var(--radius); padding: 36px 28px 28px; box-shadow: var(--shadow); }
   .q-num { font-size: 13px; color: var(--sub); letter-spacing: 1px; margin-bottom: 14px; }
-  .q-text { font-size: 20px; font-weight: 600; line-height: 1.6; margin-bottom: 28px; color: var(--text); }
+  .q-text { font-size: 18px; font-weight: 600; line-height: 1.7; margin-bottom: 28px; color: var(--text); text-wrap: pretty; }
   .q-options { display: flex; flex-direction: column; gap: 12px; }
   .q-opt {
     display: block; width: 100%; padding: 16px 20px; border: 2px solid var(--divider); border-radius: 14px;
     background: var(--card); font-size: 17px; color: var(--text); text-align: left; cursor: pointer;
-    transition: border-color 0.15s, background 0.15s; -webkit-tap-highlight-color: transparent; line-height: 1.5;
+    transition: border-color 0.15s, background 0.15s; -webkit-tap-highlight-color: transparent; line-height: 1.5; text-wrap: pretty;
   }
   .q-opt:active { border-color: var(--primary); background: #fef8f5; }
   .q-opt.selected { border-color: var(--primary); background: #fef3ee; font-weight: 500; }
@@ -88,15 +88,16 @@
   .result h2 { font-size: 26px; font-weight: 700; margin-bottom: 12px; line-height: 1.4; }
   .result .score-bar-wrap { width: 100%; max-width: 440px; margin: 16px auto 28px; }
   .result .score-labels { display: flex; justify-content: space-between; font-size: 13px; color: var(--sub); margin-bottom: 6px; }
-  .result .score-bar-bg { height: 10px; background: var(--progress-bg); border-radius: 5px; overflow: hidden; display: flex; }
-  .result .score-bar-go { background: var(--go); height: 100%; transition: width 0.6s ease; }
-  .result .score-bar-stay { background: var(--stay); height: 100%; transition: width 0.6s ease; }
+  .result .score-bar-bg { height: 28px; background: var(--progress-bg); border-radius: 6px; overflow: hidden; display: flex; position: relative; }
+  .result .score-bar-go { background: var(--go); height: 100%; transition: width 0.6s ease; display: flex; align-items: center; justify-content: center; min-width: 0; }
+  .result .score-bar-stay { background: var(--stay); height: 100%; transition: width 0.6s ease; display: flex; align-items: center; justify-content: center; min-width: 0; }
+  .result .score-bar-pct { font-size: 11px; font-weight: 700; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.2); white-space: nowrap; }
   .result .insight { background: var(--card); border-radius: var(--radius); padding: 24px 28px; text-align: left; line-height: 1.8; font-size: 16px; color: var(--text); box-shadow: var(--shadow); margin-bottom: 14px; }
-  .result .insight-title { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 8px; letter-spacing: 1px; }
+  .result .insight-title { font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 10px; border-left: 4px solid var(--primary); padding-left: 14px; }
   .result .share-hint { font-size: 14px; color: var(--sub); margin: 24px 0 28px; }
 
-  /* Bottom safe area */
-  .bottom-safe { height: env(safe-area-inset-bottom, 32px); }
+  /* Sticky nav for questions */
+  .q-nav { position: sticky; bottom: 0; background: var(--bg); padding: 16px 0 20px; z-index: 10; display: flex; justify-content: space-between; gap: 12px; }
 
   /* Desktop: center the app with a subtle card feel */
   @media (min-width: 768px) {
@@ -353,7 +354,7 @@ function renderQuestion(idx) {
   var progress = Math.round((idx / QUESTIONS.length) * 100);
   var selectedIdx = answers[idx] !== undefined ? answers[idx] : -1;
   var optsHTML = q.opts.map(function(o,i){
-    return '<button class="q-opt' + (i===selectedIdx?' selected':'') + '" data-opt="' + i + '">' + o.text + '</button>';
+    return '<button class="q-opt' + (i===selectedIdx?' selected':'') + '" data-opt="' + i + '"><b>' + 'ABCD'[i] + '.</b> ' + o.text + '</button>';
   }).join('');
   var prevHTML = idx > 0 ? '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);flex:1;padding:14px;font-size:16px;" id="prevBtn">← 上一题</button>' : '<div style="flex:1"></div>';
   var nextLabel = idx < QUESTIONS.length - 1 ? '下一题 →' : '查看结果 ✨';
@@ -365,10 +366,10 @@ function renderQuestion(idx) {
     + '<div class="page active">'
     + '<div class="q-card">'
     + '<div class="q-num">' + q.dim + ' · 第' + (idx+1) + '题</div>'
-    + '<div class="q-text">' + q.q + '</div>'
+    + '<div class="q-text"><b>' + (idx+1) + '.</b> ' + q.q + '</div>'
     + '<div class="q-options" id="options-' + idx + '">' + optsHTML + '</div>'
     + '</div>'
-    + '<div style="display:flex;justify-content:space-between;margin-top:24px;gap:12px;">'
+    + '<div class="q-nav">'
     + prevHTML
     + '<button class="btn btn-primary" style="flex:1;padding:14px;font-size:16px;" id="nextBtn" ' + (selectedIdx===-1?'disabled':'') + '>' + nextLabel + '</button>'
     + '</div>'
@@ -462,11 +463,11 @@ function showResult() {
     + '<div class="score-bar-wrap">'
     + '<div class="score-labels"><span>← 回老家</span><span>留在大城市 →</span></div>'
     + '<div class="score-bar-bg">'
-    + '<div class="score-bar-go" style="width:' + goPercent + '%"></div>'
-    + '<div class="score-bar-stay" style="width:' + stayPercent + '%"></div>'
+    + '<div class="score-bar-go" style="width:' + goPercent + '%">' + (goPercent >= 12 ? '<span class="score-bar-pct">' + goPercent + '%</span>' : '') + '</div>'
+    + '<div class="score-bar-stay" style="width:' + stayPercent + '%">' + (stayPercent >= 12 ? '<span class="score-bar-pct">' + stayPercent + '%</span>' : '') + '</div>'
     + '</div></div>'
-    + '<div class="insight"><div class="insight-title">💡 你的画像</div>' + r.desc + '</div>'
-    + r.tips.map(function(t,i){ return '<div class="insight"><div class="insight-title">' + ['🎯','📌','💪'][i] + ' 建议' + (i+1) + '</div>' + t + '</div>'; }).join('')
+    + '<div class="insight"><div class="insight-title">你的画像</div>' + r.desc + '</div>'
+    + r.tips.map(function(t,i){ return '<div class="insight"><div class="insight-title">建议' + (i+1) + '</div>' + t + '</div>'; }).join('')
     + '<p class="share-hint">📱 截图保存你的结果，或者分享给那个也在纠结的朋友</p>'
     + '<button class="btn btn-primary" onclick="startQuiz()">再测一次</button>'
     + '<button class="btn" style="background:var(--card);border:2px solid var(--divider);color:var(--text);margin-top:12px;padding:14px 32px;font-size:16px;" onclick="shareResult()">📤 分享结果</button>'
