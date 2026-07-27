@@ -19,15 +19,11 @@
         "conversationId": "conv-1785052063364-slm03sf2a"
       },
       {
-        "tabId": "tab-1785070946372-dbg36sf",
-        "conversationId": "conv-1785070961020-54wamvcfw"
-      },
-      {
         "tabId": "tab-1785116358930-uqdix3y",
         "conversationId": "conv-1785116389780-0i48483mz"
       }
     ],
-    "activeTabId": "tab-1785116358930-uqdix3y"
+    "activeTabId": "tab-1784646219154-nfrxpy5"
   },
   "settingsProvider": "pi",
   "model": "pi:kimi-coding/kimi-for-coding",
